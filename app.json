@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "DukaanDar",
+    "slug": "DukaanDar",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#003f5c"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "bundleIdentifier": "com.pulkit10251.DukaanDar", 
+      "supportsTablet": true,
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.pulkit10251.DukaanDar",
+      "adaptiveIcon": {
+        "foregroundImage" : "./assets/adaptive-icon.png",
+        "backgroundColor" : "#ffffff"
+      },
+      "googleServicesFile": "./firebase.js",
+      "permissions":["CAMERA", "ACCESS_FINE_LOCATION", "WRITE_EXTERNAL_STORAGE"],
+      "versionCode": 1
+    }
+  }
+}

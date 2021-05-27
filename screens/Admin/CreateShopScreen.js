@@ -20,27 +20,29 @@ import { NavigationEvents } from "react-navigation";
 import OrderItemAdmin from "../../components/UI/OrderItemAdmin";
 import { set } from "date-fns";
 import { normalize } from "react-native-elements";
+import { Alert } from "react-native";
 var isNew = false;
 
 const CreateShopScreen = (props) => {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState();
   const dispatch = useDispatch();
+
 
   const shopId = useSelector((state) => state.dukanId.shopId);
   // const shopId = "15C5GS";
+
+  useEffect(() => {
+    if (error) {
+      Alert.alert("Error", error);
+    }
+  }, [error]);
 
   useEffect(() => {
     const dispatchFcn = async () => {
       let isCancelled = false;
       setLoading(true);
       setRefreshing(true);
-      try {
-        if (!isCancelled) {
-          await dispatch(ShopActions.fetchShop());
-        }
-      } catch (err) {
-        if (!isCancelled) setError(err.message);
-      }
       try {
         if (!isCancelled) {
           await dispatch(OrderActions.fetchOrders(shopId));

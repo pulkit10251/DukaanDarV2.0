@@ -2,11 +2,8 @@
   "expo": {
     "name": "DukaanDar",
     "slug": "DukaanDar",
-    "platforms": [
-      "ios",
-      "android"
-    ],
-    "version": "1.0.0",
+    "platforms": ["ios", "android"],
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -17,23 +14,39 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "bundleIdentifier": "com.pulkit10251.DukaanDar", 
+      "bundleIdentifier": "com.pulkit10251.DukaanDar",
       "supportsTablet": true,
       "buildNumber": "1.0.0"
     },
     "android": {
       "package": "com.pulkit10251.DukaanDar",
       "adaptiveIcon": {
-        "foregroundImage" : "./assets/adaptive-icon.png",
-        "backgroundColor" : "#ffffff"
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
       },
-      "googleServicesFile": "./firebase.js",
-      "permissions":["CAMERA", "ACCESS_FINE_LOCATION", "WRITE_EXTERNAL_STORAGE"],
-      "versionCode": 1
+      "permissions": [
+        "CAMERA",
+        "ACCESS_FINE_LOCATION",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
+      "useNextNotificationsApi": true,
+      "versionCode": 2
+    },
+    "web": {
+      "config": {
+        "firebase": {
+          "apiKey": "AIzaSyASH-pS6-FOO4BUVPjtcTVRnq-i6w1pmuw",
+          "authDomain": "dukaandar-e4590.firebaseapp.com",
+          "databaseURL": "https://dukaandar-e4590.firebaseio.com",
+          "projectId": "dukaandar-e4590",
+          "storageBucket": "dukaandar-e4590.appspot.com",
+          "messagingSenderId": "AAAAmOfqwmU:APA91bFsdVbOKfrWREYiiPNunT6hEXcCnvPGqON4ewI9EVmeO0tEHT9TeVOZ1c1e3jiYp-dc5SEtqQnSFhwlAVp661PRf1LOY9X1gnrznDwQ_Y7iXDytGi5G-t9IUK0BjBykA3YMKmK6",
+          "appId": "1:656725951077:web:09e74bb2c42b202801bc8c",
+          "measurementId": "G-PC0HV6LFT1"
+        }
+      }
     }
   }
 }

@@ -21,13 +21,12 @@ import * as OrderActions from "../../store/actions/OrderAction";
 import { normalize } from "react-native-elements";
 import { normalizeUnits } from "moment";
 
-const sendPushNotification = async (expoPushToken) => {
+const sendPushNotification = async (expoPushToken, ExpoMessage, ExpoTitle) => {
   const message = {
     to: expoPushToken,
     sound: "default",
-    title: "Order Packed!",
-    body:
-      "The Order you placed is packed. You can take it and pay in active hours!",
+    title: ExpoTitle,
+    body: ExpoMessage,
     data: { data: "Hello" },
   };
 
@@ -195,7 +194,11 @@ const OrderDetailAdminScreen = (props) => {
                           text: "ok",
                           onPress: async () => {
                             if (expoPushToken !== undefined) {
-                              sendPushNotification(expoPushToken);
+                              sendPushNotification(
+                                expoPushToken,
+                                "The Order you placed is packed. You can take it and pay in active hours!",
+                                "Order Packed!"
+                              );
                             }
                             setLoading(true);
                             await dispatch(
@@ -264,6 +267,13 @@ const OrderDetailAdminScreen = (props) => {
                           {
                             text: "ok",
                             onPress: async () => {
+                              if (expoPushToken !== undefined) {
+                                sendPushNotification(
+                                  expoPushToken,
+                                  "Thanks, PAYMENT is done! Happy Shopping!",
+                                  "Payment Done!",
+                                );
+                              }
                               setLoading(true);
                               await dispatch(
                                 OrderActions.changePaymentStatus(

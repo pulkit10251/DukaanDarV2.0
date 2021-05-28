@@ -58,6 +58,8 @@ const OrderDetailAdminScreen = (props) => {
   const paymentStatus = order.paymentStatus;
   const dispatch = useDispatch();
 
+  const shopName = useSelector(state => state.profile.profileData).name;
+
   const [loading, setLoading] = useState(false);
 
   if (loading) {
@@ -196,7 +198,7 @@ const OrderDetailAdminScreen = (props) => {
                             if (expoPushToken !== undefined) {
                               sendPushNotification(
                                 expoPushToken,
-                                "The Order you placed is packed. You can take it and pay in active hours!",
+                                `The Order you placed is packed. You can take it and pay in active hours! - ${shopName}`,
                                 "Order Packed!"
                               );
                             }
@@ -270,7 +272,7 @@ const OrderDetailAdminScreen = (props) => {
                               if (expoPushToken !== undefined) {
                                 sendPushNotification(
                                   expoPushToken,
-                                  "Thanks, PAYMENT is done! Happy Shopping!",
+                                  `Thanks, PAYMENT is done! Happy Shopping! - ${shopName}`,
                                   "Payment Done!",
                                 );
                               }

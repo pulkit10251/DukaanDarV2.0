@@ -21,13 +21,13 @@ import OrderItemAdmin from "../../components/UI/OrderItemAdmin";
 import { set } from "date-fns";
 import { normalize } from "react-native-elements";
 import { Alert } from "react-native";
+import { RefreshControl } from "react-native";
 var isNew = false;
 
 const CreateShopScreen = (props) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
   const dispatch = useDispatch();
-
 
   const shopId = useSelector((state) => state.dukanId.shopId);
   // const shopId = "15C5GS";
@@ -129,8 +129,12 @@ const CreateShopScreen = (props) => {
         }}
       />
       <FlatList
-        // onRefresh={() => fetchOrdersFcn(shopId, setRefreshing)}
-        // refreshing={refreshing}
+        refreshControl={
+          <RefreshControl
+            onRefresh={() => fetchOrdersFcn(shopId, setRefreshing)}
+            refreshing={refreshing}
+          />
+        }
         ListHeaderComponent={
           <View style={{ flex: 1 }}>
             <View style={styles.IntroContainer}>

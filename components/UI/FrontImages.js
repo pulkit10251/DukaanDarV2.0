@@ -1,5 +1,6 @@
 import React, { memo } from "react";
 import { Text, View, StyleSheet, Image, Dimensions } from "react-native";
+import { TouchableHighlight, TouchableOpacity } from "react-native-gesture-handler";
 import { SliderBox } from "react-native-image-slider-box";
 import Colors from "../../constants/Colors";
 import Imagess from "../../constants/Imagess";
@@ -31,14 +32,13 @@ const FrontImages = (props) => {
           resizeMode="stretch"
           resizeMethod="resize"
           ImageComponentStyle={{
-            width: "95%",
-            marginTop: 10,
-            borderRadius:5,
+            width: "100%",
           }}
           paginationBoxStyle={styles.BoxStyle}
           dotStyle={styles.dotStyle}
         />
       </View>
+
     </View>
   );
 };
@@ -57,10 +57,13 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   Offers: {
-    width: "100%",
+    width: "95%",
     height: 200,
-    marginVertical: 10,
+    marginTop: 10,
     overflow:'hidden',
+    justifyContent:"center",
+    alignSelf:"center",
+    borderRadius:15,
   },
   BoxStyle: {
     bottom: 0,

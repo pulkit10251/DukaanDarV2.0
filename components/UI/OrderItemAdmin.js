@@ -38,18 +38,6 @@ const OrderItemAdmin = (props) => {
           <Text style={styles.Text}>{props.paymentMethod}</Text>
         </View>
         <View style={styles.IdContainer}>
-          <Text style={styles.boldText}>Payment Status : </Text>
-          <Text
-            style={{
-              ...styles.Textcolor,
-              color: props.paymentStatus ? "green" : "red",
-              fontSize: normalize(12)
-            }}
-          >
-            {props.paymentStatus ? "DONE" : "PENDING"}
-          </Text>
-        </View>
-        <View style={styles.IdContainer}>
           <Text style={styles.boldText}>Order Status : </Text>
           <Text
             style={{
@@ -61,6 +49,19 @@ const OrderItemAdmin = (props) => {
             {props.orderStatus.toUpperCase()}
           </Text>
         </View>
+        <View style={styles.IdContainer}>
+          <Text style={styles.boldText}>Payment Status : </Text>
+          <Text
+            style={{
+              ...styles.Textcolor,
+              color: props.paymentStatus ? "green" : "red",
+              fontSize: normalize(12)
+            }}
+          >
+            {props.paymentStatus ? "DONE" : "PENDING"}
+          </Text>
+        </View>
+
       </View>
       <View style={styles.buttonContainer}>
         <TouchableCmp onPress={props.navigate}>

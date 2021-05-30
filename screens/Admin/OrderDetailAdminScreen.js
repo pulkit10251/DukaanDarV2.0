@@ -58,7 +58,7 @@ const OrderDetailAdminScreen = (props) => {
   const paymentStatus = order.paymentStatus;
   const dispatch = useDispatch();
 
-  const shopName = useSelector(state => state.profile.profileData).name;
+  const shopName = useSelector(state => state.dukanId.shopName);
 
   const [loading, setLoading] = useState(false);
 
